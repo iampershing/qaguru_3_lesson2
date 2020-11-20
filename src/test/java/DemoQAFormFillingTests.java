@@ -24,8 +24,7 @@ public class DemoQAFormFillingTests {
             success = "Thanks for submitting the form",
             invalidemail = "this is not email";
 
-
-    File file = new File("src/test/java/resources/test.jpg");
+    File file = new File("src/test/resources/test.jpg");
 
     @Test
     public void userCanFillTheForm() {
@@ -49,11 +48,11 @@ public class DemoQAFormFillingTests {
         $(byText(city)).click();
         $("#submit").click();
         $(byText(success)).shouldBe(Condition.visible);
-        $("tr:nth-child(1)>td:nth-child(2)").shouldHave(Condition.text(firstname+" "+lastname));
+        $("tr:nth-child(1)>td:nth-child(2)").shouldHave(Condition.text(firstname + " " + lastname));
         $("tr:nth-child(2)>td:nth-child(2)").shouldHave(Condition.text(email));
         $("tr:nth-child(3)>td:nth-child(2)").shouldHave(Condition.text(gender));
         $("tr:nth-child(4)>td:nth-child(2)").shouldHave(Condition.text(number));
-        $("tr:nth-child(5)>td:nth-child(2)").shouldHave(Condition.text(day+" "+month+","+year));
+        $("tr:nth-child(5)>td:nth-child(2)").shouldHave(Condition.text(day + " " + month + "," + year));
         $("tr:nth-child(6)>td:nth-child(2)").shouldHave(Condition.text(subject));
         $("tr:nth-child(7)>td:nth-child(2)").shouldHave(Condition.text(hobby));
         $("tr:nth-child(9)>td:nth-child(2)").shouldHave(Condition.text(address));
